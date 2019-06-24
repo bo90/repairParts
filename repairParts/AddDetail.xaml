@@ -1,0 +1,47 @@
+﻿<Window x:Class="repairParts.AddDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:repairParts"
+        mc:Ignorable="d"
+        Title="Добавление/изменение свойств записей" Height="635.912" Width="800" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid>
+        <GroupBox Header="Свойства детали" Margin="10,10,0,0" Height="215" VerticalAlignment="Top" HorizontalAlignment="Left" Width="772">
+            <Grid>
+                <Label Margin="10,10,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="141">Наименование детали:</Label>
+                <ComboBox x:Name="nameDateil" Margin="156,14,0,0" IsEditable="True" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="143" 
+                           DropDownClosed="ComboBox_DropDownClosed" ItemsSource="{Binding namePair}" DisplayMemberPath="namePair"></ComboBox>
+                <Label Margin="317,10,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="103">Парт № детали:</Label>
+                <ComboBox x:Name="partNumber" Margin="425,14,0,0" Height="28" VerticalAlignment="Top" 
+                          HorizontalAlignment="Left" Width="226" IsEditable="True" ItemsSource="{Binding ID_Pair}" DisplayMemberPath="ID_Pair"></ComboBox>
+                <Label Margin="10,62,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="141">Фирма производитель:</Label>
+                <ComboBox x:Name="firmaComBox" ItemsSource="{Binding NameFirm}" DisplayMemberPath="NameFirm" Margin="156,66,0,0" HorizontalAlignment="Left" Width="495" Height="28" VerticalAlignment="Top" IsEditable="True"></ComboBox>
+                <Label Margin="10,95,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110">Описание детали:</Label>
+                <TextBox x:Name="DescrTxtBox" Margin="156,103,0,0" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="518" TextWrapping="Wrap"></TextBox>
+                <Button Margin="672,12,0,0" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="81">создать</Button>
+                <Button Margin="672,62,7,107">Изменить</Button>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Описание поставщика" Margin="10,230,12,0" Height="235" VerticalAlignment="Top">
+            <Grid Margin="10,10,-2,4">
+                <Label Margin="10,10,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="77">№ фирмы:</Label>
+                <ComboBox x:Name="firmIDComBox" ItemsSource="{Binding IndexFirm}" DisplayMemberPath="IndexFirm" Margin="92,10,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="158" IsEditable="True"></ComboBox>
+                <Label Margin="10,57,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="152">Полное название фирмы:</Label>
+                <ComboBox x:Name="fullNmaeComBox" Margin="179,56,0,0" ItemsSource="{Binding NameFirm}" DisplayMemberPath="NameFirm" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="550" IsEditable="True"></ComboBox>
+                <Label Margin="10,105,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="53">Адрес:</Label>
+                <ComboBox x:Name="addresCmbBoxs" ItemsSource="{Binding address}" DisplayMemberPath="address" Margin="63,105,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="666" IsEditable="True"></ComboBox>
+                <Label Margin="10,149,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="99">Телефонный №:</Label>
+                <TextBox x:Name="telComBox" Margin="123,149,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="606"></TextBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Использование в автомобилях" Margin="10,470,12,10">
+            <Grid>
+                <Label Margin="10,10,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="79">Марка авто:</Label>
+                <ComboBox x:Name="markcomBox" ItemsSource="{Binding Mark}" DisplayMemberPath="Mark" Margin="94,10,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="176" IsEditable="True"></ComboBox>
+                <Label Margin="300,10,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="60">Модель:</Label>
+                <ComboBox x:Name="ModelComBox" ItemsSource="{Binding PetName}" DisplayMemberPath="PetName" Margin="374,10,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="312" IsEditable="True"></ComboBox>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
